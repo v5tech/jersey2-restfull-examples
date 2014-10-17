@@ -55,7 +55,6 @@ public class DefaultExceptionMapper implements ExceptionMapper<Throwable> {
 
     @Override
     public Response toResponse(Throwable t) {
-        //System.out.println("Throwable: " + t);
         RestError error = getRestError(t);
         return Response.status(Response.Status.fromStatusCode(error.getStatus().value()))
                 .type(MediaType.APPLICATION_JSON_TYPE)

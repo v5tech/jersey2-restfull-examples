@@ -37,7 +37,6 @@ public class ObjectMapperProvider implements ContextResolver<ObjectMapper> {
 
     public ObjectMapperProvider() {
         this.objectMapper = new ObjectMapper();
-        //this.objectMapper.configure(SerializationConfig.Feature.INDENT_OUTPUT, true);
         this.objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         //set up ISO 8601 date/time stamp format:
         final DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:sss'Z'");

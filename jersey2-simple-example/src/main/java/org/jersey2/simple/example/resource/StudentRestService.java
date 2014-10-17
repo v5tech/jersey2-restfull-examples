@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -91,6 +93,65 @@ public class StudentRestService {
 		return students;
  
 	}
+	
+	
+	
+	
+	/**
+	 * 使用Students返回xml或json格式的数据 注意方法声明返回值为Students而不再是Response
+	 * @return
+	 */
+	@Path("/v4")
+	@GET
+	public Students getStudentsV4(@QueryParam("pageNumber")int pageNumber,@DefaultValue("20")@QueryParam("pageSize")int pageSize) {
+		
+		Students students = new Students();
+		List<Student> lists = new ArrayList<Student>();
+		
+		ClassRoom classRoom = new ClassRoom();
+		classRoom.setCid(1);
+		classRoom.setClassname("三年二班");
+		
+		for (int i = 1; i <= 100; i++) {
+			Student student = new Student(i,"SCOTT");
+			student.setClassRoom(classRoom);
+			lists.add(student);
+		}
+		
+		//计算总页数
+		int totalPages = lists.size() % pageSize==0 ? lists.size() / pageSize :lists.size() / pageSize +1 ;
+		
+		if(pageNumber <= 0 ){
+			pageNumber = 1;
+		}else if(pageNumber >= totalPages){
+			pageNumber = totalPages;
+		}
+		
+		int start = (pageNumber-1)*pageSize;//起始位置
+		int end = start + pageSize; //结束位置
+		
+	    for (int i = start; i < end; i++) {
+	    	students.getStudents().add(lists.get(i));
+		}
+				
+				
+		return students;
+ 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/**
 	 * GET方式返回json格式数据

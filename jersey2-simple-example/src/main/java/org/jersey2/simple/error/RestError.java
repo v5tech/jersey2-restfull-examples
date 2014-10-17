@@ -27,7 +27,7 @@ public class RestError {
     private static final String STATUS_PROP_NAME = "status";
     private static final String CODE_PROP_NAME = "code";
     private static final String MESSAGE_PROP_NAME = "message";
-    private static final String DEVELOPER_MESSAGE_PROP_NAME = "developerMessage";
+    private static final String DEVELOPER_MESSAGE_PROP_NAME = "devMessage";
     private static final String MORE_INFO_PROP_NAME = "moreInfo";
 
     private static final String DEFAULT_MORE_INFO_URL = "mailto:sxyx2008@163.com";

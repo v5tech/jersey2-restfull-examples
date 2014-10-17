@@ -52,6 +52,18 @@ public class StudentRestServiceClient{
 	}
 	
 	
+	public static void testGetStudentsV4(){
+		Client client = ClientBuilder.newBuilder().register(MoxyJsonFeature.class).register(MyApplication.createMoxyJsonResolver()).build();
+		Response response = client.target("http://localhost:8080/v1/api/student").path("v4").queryParam("pageNumber", "1").request(MediaType.APPLICATION_JSON).get();
+		System.out.println(response.getStatus());
+		System.out.println(response.readEntity(String.class));
+		System.out.println("---------------------------------");
+		response = client.target("http://localhost:8080/v1/api/student").path("/v4").queryParam("pageNumber", "1").request(MediaType.APPLICATION_XML).get();
+		System.out.println(response.getStatus());
+		System.out.println(response.readEntity(String.class));
+	}
+	
+	
 	public static void testGetStudentInJson(){
 		Client client = ClientBuilder.newBuilder().register(MoxyJsonFeature.class).register(MyApplication.createMoxyJsonResolver()).build();
 		Response response = client.target("http://localhost:8080/v1/api/student/json").path("1").request().get();
@@ -145,6 +157,9 @@ public class StudentRestServiceClient{
 		System.out.println();
 		
 		testGetStudentsV3();
+		System.out.println();
+		
+		testGetStudentsV4();
 		System.out.println();
 		
 		testGetStudentInJson();
