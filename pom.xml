@@ -8,5 +8,6 @@
   <modules>
     <module>jersey2-simple-example</module>
     <module>jersey2-jsonsupport-examples</module>
+    <module>jersey2-xml-examples</module>
   </modules>
 </project>
