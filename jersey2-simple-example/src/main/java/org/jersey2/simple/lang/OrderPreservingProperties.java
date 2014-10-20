@@ -127,7 +127,8 @@ public class OrderPreservingProperties implements Map<String,String> {
         return new String[]{key, value};
     }
 
-    private static Map<String, String> toMapProps(String content) {
+    @SuppressWarnings("resource")
+	private static Map<String, String> toMapProps(String content) {
         Map<String, String> props = new LinkedHashMap<String, String>();
         String line;
         StringBuilder lineBuffer = new StringBuilder();

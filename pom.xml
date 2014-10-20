@@ -7,5 +7,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>jersey2-simple-example</module>
+    <module>jersey2-jsonsupport-examples</module>
   </modules>
 </project>
