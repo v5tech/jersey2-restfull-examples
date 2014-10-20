@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>net.aimeizi</groupId>
-		<artifactId>jersey2-restfull-example</artifactId>
+		<artifactId>jersey2-restfull-examples</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>jersey2-jsonsupport-examples</artifactId>

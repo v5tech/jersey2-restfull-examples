@@ -1,5 +1,5 @@
-jersey2-restfull-example
-======================
+jersey2-restfull-examples
+=========================
 
 基于jersey2的restfull api接口实现
 
