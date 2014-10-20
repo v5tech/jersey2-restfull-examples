@@ -14,5 +14,7 @@
   </properties>
   <modules>
     <module>jersey2-jaxb-example</module>
+    <module>jersey2-jaxbcontext-example</module>
+    <module>jersey2-moxyxml-example</module>
   </modules>
 </project>

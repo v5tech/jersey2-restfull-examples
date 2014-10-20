@@ -1,4 +1,4 @@
-package org.jersey2.jaxb.example;
+package org.jersey2.jaxbcontext.example;
 
 import java.util.ArrayList;
 import java.util.List;

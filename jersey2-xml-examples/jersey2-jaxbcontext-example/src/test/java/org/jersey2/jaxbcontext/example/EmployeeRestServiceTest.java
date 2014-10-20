@@ -1,4 +1,4 @@
-package org.jersey2.jaxb.example;
+package org.jersey2.jaxbcontext.example;
 
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Application;
@@ -7,6 +7,7 @@ import javax.ws.rs.core.Response;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
+import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
 import org.junit.Test;
@@ -18,6 +19,12 @@ public class EmployeeRestServiceTest extends JerseyTest {
 		enable(TestProperties.LOG_TRAFFIC);
         enable(TestProperties.DUMP_ENTITY);
 		return new MyApplication();
+	}
+	
+	@Override
+	protected void configureClient(ClientConfig config) {
+		super.configureClient(config);
+		config.register(EmployeeJAXBContextProvider.class);
 	}
 	
 	@Test

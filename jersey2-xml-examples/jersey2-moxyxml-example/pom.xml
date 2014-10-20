@@ -8,11 +8,11 @@
 		<artifactId>jersey2-xml-examples</artifactId>
 		<version>1.0</version>
 	</parent>
-	<artifactId>jersey2-jaxb-example</artifactId>
+	<artifactId>jersey2-moxyxml-example</artifactId>
 	<packaging>war</packaging>
-	<name>jersey2-jaxb-example</name>
+	<name>jersey2-moxyxml-example</name>
 	<properties>
-		<jersey.version>2.13</jersey.version>
+		<jersey.version>2.7</jersey.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencyManagement>
@@ -31,6 +31,11 @@
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet-core</artifactId>
 		</dependency>
+		<!-- jersey moxy -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+		</dependency>
 		<!-- JerseyTest -->
 		<dependency>
 			<groupId>org.glassfish.jersey.test-framework.providers</groupId>
@@ -40,7 +45,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>jersey2-jaxb-example</finalName>
+		<finalName>jersey2-moxyxml-example</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
