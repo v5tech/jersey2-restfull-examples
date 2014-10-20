@@ -16,5 +16,7 @@
 	<modules>
 		<module>jersey2-jsonp-example</module>
 		<module>jersey2-moxy-example</module>
+		<module>jersey2-jackson-example</module>
+		<module>jersey2-jettison-example</module>
 	</modules>
 </project>
